@@ -1,30 +1,32 @@
 $(document).ready(function(){
  /* code for Objective 1*/
-    $('.arrow-left').hide(); // CSS to hide the arrows in the labe;
-    $('.arrow-right').hide();
+    $(".arrow-left").hide(); // CSS to hide the arrows in the labe;
+    $(".arrow-right").hide();
 
-
-    $("img").click(function() {
-    var x = $('label').text(); //getting the text of the label
+    $(".img").click(function() {
+    var x = $("#label1").text(); //getting the text of the label
+    console.log(x);
   	if(x == "I am Right") {
+      
   		$("#label1").text("No,I am Right");
-      $('#button1').prop('disabled', true); // disabling one speaker
+      $("#button1").prop('disabled', true); // Disabling one speaker
       $('#button2').prop('disabled', false);// Enabling the other speaker
-      $('.arrow-left').show();
-      $('.arrow-right').hide();
+      $(".arrow-left").show();
+      $(".arrow-right").hide();
   	  }		else {
+        console.log("y");
   		$("#label1").text("I am Right");
       $('#button1').prop('disabled', false);
       $('#button2').prop('disabled', true);
       $('.arrow-left').hide();
       $('.arrow-right').show();
      	}
-     })
+    });
 
   // code for Objective 2 - REMOVE comment tags to activate the function*/
-  ("p").hover(function(){
+ $("p").hover(function(){
     alert("I said Not to Hover over me");
-  }) 
+  }) ;
 
   //code for Objective 3
     $("#obj3").on("keyup", function() {
@@ -40,7 +42,7 @@ $(document).ready(function(){
       } else {
       var pwdvalidation = false;
       return(false);
-    }
+     }
   }
 
   function usrname(){
@@ -52,7 +54,7 @@ $(document).ready(function(){
       }
   }
 
-    $("#login").click(function()  {
+  $("#login").click(function()  {
      if (usrname() && checkpwd()){
             // alert("Success");
             $("#message").html("Login Success");
@@ -60,8 +62,7 @@ $(document).ready(function(){
             } else {
             alert("Incorrect : Username should have a Number and password should be 12345678");
             }
-  })
-
+    });
 });
 
 
